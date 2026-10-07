@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "ReelsBan — 이제 현실로",
+  "version": "0.2.0",
+  "description": "릴스·쇼츠·틱톡의 하루 한도를 각각 정하고, 한도에 도달하면 현실로 돌아오세요.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ReelsBan"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://instagram.com/*",
+        "https://www.youtube.com/*",
+        "https://youtube.com/*",
+        "https://www.tiktok.com/*",
+        "https://tiktok.com/*"
+      ],
+      "js": [
+        "detector.js",
+        "seoul-boundary.js",
+        "location.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

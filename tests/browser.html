@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ReelsBan browser checks</title><style>video{display:block;width:360px;height:540px;background:#222}body{margin:0}</style></head><body>
+<article><div id="test-player"><video src="/first.mp4"></video></div><a id="permalink" href="/@tester/video/111111">Video</a></article><pre id="result">RUNNING</pre>
+<script>
+  let shadow, state = { day: '2026-10-07', count: 0, limit: 2, enabled: true, blocked: false };
+  const platform = new URLSearchParams(location.search).get('platform') || 'instagram';
+  const guest = new URLSearchParams(location.search).has('guest');
+  if (guest) { document.getElementById('permalink').remove(); document.getElementById('test-player').id = 'xgwrapper-0-111111'; }
+  const allState = () => ({day: state.day, services: Object.fromEntries(['instagram','youtube','tiktok'].map(p => [p, p === platform ? { ...state } : { count: 0, limit: 30, enabled: true, blocked: false }]))});
+  // Make permission state deterministic; never request the host machine location.
+  Object.defineProperty(navigator, 'permissions', { value: { query: async () => ({ state: 'prompt' }) } });
+  const changes = [];
+  const navigations = [];
+  globalThis.recordNavigation = url => navigations.push(url);
+  const original = Element.prototype.attachShadow;
+  Element.prototype.attachShadow = function(options) { shadow = original.call(this, options); return shadow; };
+  globalThis.chrome = {
+    runtime: { id: 'test', async sendMessage(message) {
+      if (message.type === 'visit') { state.count++; state.blocked = state.count >= state.limit; }
+      return { ok: true, state: allState() };
+    } }, storage: { onChanged: { addListener(fn) { changes.push(fn); } } }
+  };
+</script>
+<script src="/extension/detector.js"></script><script src="/extension/seoul-boundary.js"></script><script src="/extension/location.js"></script><script src="/extension/content.js"></script>
+<script>
+  const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+  function check(value, label) { if (!value) throw new Error(label); }
+  (async () => {
+    await wait(1300);
+    check(state.count === 1, 'first reel counted once');
+    await wait(1000);
+    check(state.count === 1, 'stationary reel does not repeat');
+    check(navigations.length === 0, 'no navigation below limit');
+    document.querySelector('video').src = '/second.mp4';
+    if (guest) document.querySelector('[id^="xgwrapper-"]').id = 'xgwrapper-0-222222';
+    else document.getElementById('permalink').href = '/@tester/video/222222';
+    if (platform === 'youtube') history.pushState({}, '', '/shorts/second?platform=youtube');
+    await wait(1300);
+    check(state.count === 2, 'second reel counted');
+    check(!shadow.querySelector('dialog'), 'no intermediate limit modal');
+    check(navigations.length === 1 && navigations[0] === 'https://mcdonalds.recruiter.co.kr/career/jobs/130416', 'automatically navigates to job site');
+    await wait(500);
+    check(navigations.length === 1, 'navigation only fires once while blocked');
+    state.limit = 5; state.blocked = false;
+    changes.forEach(fn => fn({ state: { newValue: allState() } }, 'local'));
+    check(shadow.querySelector('.badge').textContent.includes('2 / 5'), 'raising limit updates usage');
+    state.limit = 2; state.blocked = true;
+    changes.forEach(fn => fn({ state: { newValue: allState() } }, 'local'));
+    await wait(100);
+    history.pushState({}, '', platform === 'youtube' ? '/watch?v=normal' : platform === 'tiktok' ? '/search?q=test' : '/direct/inbox/');
+    await wait(400);
+    check(shadow.host.style.display === 'none', 'SPA navigation to DM hides badge');
+    check(navigations.length === 2, 'DM does not trigger navigation');
+    document.getElementById('result').textContent = 'PASS: count, deduplication, no intermediate modal, automatic navigation, live settings, SPA navigation';
+  })().catch(error => { document.getElementById('result').textContent = 'FAIL: ' + error.message; });
+</script></body></html>
