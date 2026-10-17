@@ -12,6 +12,12 @@
 
 > 데스크톱 Chrome 웹사이트용입니다. iPhone·Android의 Instagram, YouTube, TikTok 앱에는 적용되지 않습니다. Chrome 웹 스토어에는 아직 등록되지 않았습니다.
 
+## iPhone 앱 개발 버전
+
+`ios/`에 **iOS 26.5 이상**을 대상으로 하는 별도 SwiftUI 앱을 추가했습니다. Chrome 버전의 영상 개수 대신, 선택한 여러 앱에 각각 하루 사용 시간 한도(앱마다 기본 30분)를 적용합니다. 한도에 도달한 앱만 차단하고, **설정한 사이트 열기**를 누르면 ReelsBan 앱 안에서 사용자 지정 주소를 엽니다. 기본값은 맥도날드 공고입니다. 시간 제한 권한 승인에는 아이폰 잠금 암호가 필요합니다.
+
+개발 소스 단계이며 App Store/TestFlight에는 배포하지 않았습니다. 설치·서명 준비, SDK 요구사항, 실기기 검증 항목은 [iPhone 개발 안내](ios/README.md)를 참고하세요.
+
 ## 1. 설치하기
 
 1. 이 GitHub 페이지 상단의 **Code → Download ZIP**을 클릭합니다.

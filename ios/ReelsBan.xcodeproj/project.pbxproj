@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0190877F389C4E8CB2102A1B /* ActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52566087619F2F5AAA1B8AB6 /* ActivityMonitor.swift */; };
+		02BFC6A7F035C669F20E1BCF /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
+		0BC76B6B1BB88FDD9B2B9635 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197F3D39330164296561FC /* ShieldConfigurationExtension.swift */; };
+		0F4E120E6298B0E4F288923F /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
+		2744F6A161FC12F6D005EABD /* ActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E765FF2793B668CE00856306 /* ActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		359C595C205B90E5EC526115 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
+		5976DD54C6458951817F3863 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
+		65C53DF84FA34863A9DE8100 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
+		812A40C6633AEBF0F42EDA43 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */; };
+		88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
+		8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
+		93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9AF6551CC9AEF82BE7CAD374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C503F9E87133AF155A922937 /* ContentView.swift */; };
+		9B7ADF4BCA2C5BE1CC88DF4D /* ReelsBanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */; };
+		D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87477148CD3B07E02D61BB46 /* AppModel.swift */; };
+		DBFFE34E98E4725A69BFCEAB /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
+		FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		335767FE929795C28CE445BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36C53E91BA450C1F8CD85F4E;
+			remoteInfo = ActivityMonitor;
+		};
+		72D483BDC2CEC04636AB903C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59CD4E073EDF53C7DC2416C9;
+			remoteInfo = ShieldConfiguration;
+		};
+		772C615A89779CD748CBAF2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1530FAFF9813EBB0705CA30;
+			remoteInfo = ShieldAction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B68D31B0381A524DCA2E6215 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2744F6A161FC12F6D005EABD /* ActivityMonitor.appex in Embed Foundation Extensions */,
+				93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */,
+				FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Signing.xcconfig; sourceTree = SOURCE_ROOT; };
+		135A592D60B0A23F91E6B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		13A5EB5198AF0CC7E72FF078 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
+		1F912F30FC8FAA175A484821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsBanApp.swift; sourceTree = "<group>"; };
+		52566087619F2F5AAA1B8AB6 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
+		6F5813F889F253538F6A5C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		87477148CD3B07E02D61BB46 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6197F3D39330164296561FC /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		B7B11A8C7B3F6681A29B030F /* ReelsBan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelsBan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicy.swift; sourceTree = "<group>"; };
+		BE14C68D91AC948C4DD8ABD6 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
+		BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
+		C0CDE440CF19639562978BBF /* SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedState.swift; sourceTree = "<group>"; };
+		C503F9E87133AF155A922937 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C85F0C59015CEDB4EB498FE9 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
+		DB3C61B231F1D05037439A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DFF7934AACE08B4414278EF7 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
+		E765FF2793B668CE00856306 /* ActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		12154F0F754DB1E5BC434CB3 /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				52566087619F2F5AAA1B8AB6 /* ActivityMonitor.swift */,
+				135A592D60B0A23F91E6B39D /* Info.plist */,
+				BE14C68D91AC948C4DD8ABD6 /* ReelsBan.entitlements */,
+			);
+			path = Monitor;
+			sourceTree = "<group>";
+		};
+		19B38C59EA65CA5B78ECA02F /* ShieldConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				1F912F30FC8FAA175A484821 /* Info.plist */,
+				C85F0C59015CEDB4EB498FE9 /* ReelsBan.entitlements */,
+				B6197F3D39330164296561FC /* ShieldConfigurationExtension.swift */,
+			);
+			path = ShieldConfiguration;
+			sourceTree = "<group>";
+		};
+		4EACF0585E1CDFA01F3005E8 /* ShieldAction */ = {
+			isa = PBXGroup;
+			children = (
+				6F5813F889F253538F6A5C54 /* Info.plist */,
+				13A5EB5198AF0CC7E72FF078 /* ReelsBan.entitlements */,
+				BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */,
+			);
+			path = ShieldAction;
+			sourceTree = "<group>";
+		};
+		5BDCF4F523BD1E3284B5A6D0 /* ReelsBanPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */,
+			);
+			name = ReelsBanPolicy;
+			path = Policy/Sources/ReelsBanPolicy;
+			sourceTree = "<group>";
+		};
+		786FC602D578123619D97E94 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C0CDE440CF19639562978BBF /* SharedState.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		84E66F38DB75D02DAF050335 = {
+			isa = PBXGroup;
+			children = (
+				E306C8AB43BD615393CF02C5 /* App */,
+				12154F0F754DB1E5BC434CB3 /* Monitor */,
+				5BDCF4F523BD1E3284B5A6D0 /* ReelsBanPolicy */,
+				786FC602D578123619D97E94 /* Shared */,
+				4EACF0585E1CDFA01F3005E8 /* ShieldAction */,
+				19B38C59EA65CA5B78ECA02F /* ShieldConfiguration */,
+				C039426B28A8D7F5CCACE207 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C039426B28A8D7F5CCACE207 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E765FF2793B668CE00856306 /* ActivityMonitor.appex */,
+				B7B11A8C7B3F6681A29B030F /* ReelsBan.app */,
+				F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */,
+				B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E306C8AB43BD615393CF02C5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				87477148CD3B07E02D61BB46 /* AppModel.swift */,
+				C503F9E87133AF155A922937 /* ContentView.swift */,
+				DB3C61B231F1D05037439A03 /* Info.plist */,
+				DFF7934AACE08B4414278EF7 /* ReelsBan.entitlements */,
+				460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36C53E91BA450C1F8CD85F4E /* ActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC20136073A5B45343ED296A /* Build configuration list for PBXNativeTarget "ActivityMonitor" */;
+			buildPhases = (
+				83ABFEDFE2BC38DC0105073A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = ActivityMonitor;
+			productReference = E765FF2793B668CE00856306 /* ActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		59CD4E073EDF53C7DC2416C9 /* ShieldConfiguration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39AC99D615A06F791B7BA2A6 /* Build configuration list for PBXNativeTarget "ShieldConfiguration" */;
+			buildPhases = (
+				A8EB94E7D0D79802876A6296 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldConfiguration;
+			packageProductDependencies = (
+			);
+			productName = ShieldConfiguration;
+			productReference = B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		607429A1B121B0A762FCBB67 /* ReelsBan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 135957D207A9120CE1B9CC6D /* Build configuration list for PBXNativeTarget "ReelsBan" */;
+			buildPhases = (
+				466A0D3E4B36F8B972998D92 /* Sources */,
+				B68D31B0381A524DCA2E6215 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D6CB3D01DBA081D32ED3123 /* PBXTargetDependency */,
+				AC32C6A27754AEC63D2A1310 /* PBXTargetDependency */,
+				03ED12801A7CB2199A1B1F81 /* PBXTargetDependency */,
+			);
+			name = ReelsBan;
+			packageProductDependencies = (
+			);
+			productName = ReelsBan;
+			productReference = B7B11A8C7B3F6681A29B030F /* ReelsBan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1530FAFF9813EBB0705CA30 /* ShieldAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4C1E0B441B0099493D5B6CC /* Build configuration list for PBXNativeTarget "ShieldAction" */;
+			buildPhases = (
+				B84E34BF3727552522D66B74 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldAction;
+			packageProductDependencies = (
+			);
+			productName = ShieldAction;
+			productReference = F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AE54BEF2FB3750E9FD3FAA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					36C53E91BA450C1F8CD85F4E = {
+						ProvisioningStyle = Automatic;
+					};
+					59CD4E073EDF53C7DC2416C9 = {
+						ProvisioningStyle = Automatic;
+					};
+					607429A1B121B0A762FCBB67 = {
+						ProvisioningStyle = Automatic;
+					};
+					F1530FAFF9813EBB0705CA30 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6A8FCD33D191AFE9032E719A /* Build configuration list for PBXProject "ReelsBan" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 84E66F38DB75D02DAF050335;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C039426B28A8D7F5CCACE207 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607429A1B121B0A762FCBB67 /* ReelsBan */,
+				36C53E91BA450C1F8CD85F4E /* ActivityMonitor */,
+				59CD4E073EDF53C7DC2416C9 /* ShieldConfiguration */,
+				F1530FAFF9813EBB0705CA30 /* ShieldAction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		466A0D3E4B36F8B972998D92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */,
+				9AF6551CC9AEF82BE7CAD374 /* ContentView.swift in Sources */,
+				0F4E120E6298B0E4F288923F /* DailyPolicy.swift in Sources */,
+				9B7ADF4BCA2C5BE1CC88DF4D /* ReelsBanApp.swift in Sources */,
+				359C595C205B90E5EC526115 /* SharedState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83ABFEDFE2BC38DC0105073A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0190877F389C4E8CB2102A1B /* ActivityMonitor.swift in Sources */,
+				65C53DF84FA34863A9DE8100 /* DailyPolicy.swift in Sources */,
+				88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8EB94E7D0D79802876A6296 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5976DD54C6458951817F3863 /* DailyPolicy.swift in Sources */,
+				8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */,
+				0BC76B6B1BB88FDD9B2B9635 /* ShieldConfigurationExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B84E34BF3727552522D66B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02BFC6A7F035C669F20E1BCF /* DailyPolicy.swift in Sources */,
+				DBFFE34E98E4725A69BFCEAB /* SharedState.swift in Sources */,
+				812A40C6633AEBF0F42EDA43 /* ShieldActionExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03ED12801A7CB2199A1B1F81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1530FAFF9813EBB0705CA30 /* ShieldAction */;
+			targetProxy = 772C615A89779CD748CBAF2A /* PBXContainerItemProxy */;
+		};
+		5D6CB3D01DBA081D32ED3123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36C53E91BA450C1F8CD85F4E /* ActivityMonitor */;
+			targetProxy = 335767FE929795C28CE445BD /* PBXContainerItemProxy */;
+		};
+		AC32C6A27754AEC63D2A1310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59CD4E073EDF53C7DC2416C9 /* ShieldConfiguration */;
+			targetProxy = 72D483BDC2CEC04636AB903C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12EB7C1FEE238A949421820A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/ReelsBan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		144242A33C9A386D69CC7628 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/ReelsBan.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		224E545AFA8E9A81678A1B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldAction/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = ShieldAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.shieldaction;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B86D1BBA693C265940BFF32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Monitor/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.monitor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		675B4E9D2253ED2AF8FA22B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REELSBAN_APP_GROUP = group.com.reelsban.shared;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7391B5B0CB49559F88013C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldAction/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = ShieldAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.shieldaction;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		81CABAD003236EDC3CDA3CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.shieldconfiguration;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A240BAC580559FD646E8800A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.shieldconfiguration;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4BE7BB7934DD0667E37E020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Monitor/ReelsBan.entitlements;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
+				INFOPLIST_FILE = Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.monitor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E9292CE168B8E9E146319A36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REELSBAN_APP_GROUP = group.com.reelsban.shared;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		135957D207A9120CE1B9CC6D /* Build configuration list for PBXNativeTarget "ReelsBan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144242A33C9A386D69CC7628 /* Debug */,
+				12EB7C1FEE238A949421820A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		39AC99D615A06F791B7BA2A6 /* Build configuration list for PBXNativeTarget "ShieldConfiguration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A240BAC580559FD646E8800A /* Debug */,
+				81CABAD003236EDC3CDA3CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6A8FCD33D191AFE9032E719A /* Build configuration list for PBXProject "ReelsBan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675B4E9D2253ED2AF8FA22B8 /* Debug */,
+				E9292CE168B8E9E146319A36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A4C1E0B441B0099493D5B6CC /* Build configuration list for PBXNativeTarget "ShieldAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224E545AFA8E9A81678A1B3E /* Debug */,
+				7391B5B0CB49559F88013C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC20136073A5B45343ED296A /* Build configuration list for PBXNativeTarget "ActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B86D1BBA693C265940BFF32 /* Debug */,
+				E4BE7BB7934DD0667E37E020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
+}

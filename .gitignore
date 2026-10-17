@@ -10,3 +10,11 @@ coverage/
 dist/
 .codex/
 .agents/
+
+# Xcode / SwiftPM
+DerivedData/
+.build/
+.swiftpm/
+xcuserdata/
+*.xcuserstate
+ios/Config/Signing.local.xcconfig

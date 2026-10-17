@@ -1,0 +1,71 @@
+name: ReelsBan
+options:
+  bundleIdPrefix: com.reelsban
+  deploymentTarget:
+    iOS: '26.5'
+configFiles:
+  Debug: Config/Signing.xcconfig
+  Release: Config/Signing.xcconfig
+settings:
+  base:
+    DEVELOPMENT_TEAM: $(REELSBAN_DEVELOPMENT_TEAM)
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1'
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: '0.1.0'
+    CURRENT_PROJECT_VERSION: '1'
+    REELSBAN_APP_GROUP: group.com.reelsban.shared
+    GENERATE_INFOPLIST_FILE: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+targets:
+  ReelsBan:
+    type: application
+    platform: iOS
+    sources: [App, Shared, Policy/Sources/ReelsBanPolicy]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/ReelsBan.entitlements
+    dependencies:
+      - target: ActivityMonitor
+        embed: true
+      - target: ShieldConfiguration
+        embed: true
+      - target: ShieldAction
+        embed: true
+  ActivityMonitor:
+    type: app-extension
+    platform: iOS
+    sources: [Monitor, Shared, Policy/Sources/ReelsBanPolicy]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app.monitor
+        INFOPLIST_FILE: Monitor/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Monitor/ReelsBan.entitlements
+        APPLICATION_EXTENSION_API_ONLY: YES
+  ShieldConfiguration:
+    type: app-extension
+    platform: iOS
+    sources: [ShieldConfiguration, Shared, Policy/Sources/ReelsBanPolicy]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app.shieldconfiguration
+        INFOPLIST_FILE: ShieldConfiguration/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ShieldConfiguration/ReelsBan.entitlements
+        APPLICATION_EXTENSION_API_ONLY: YES
+  ShieldAction:
+    type: app-extension
+    platform: iOS
+    sources: [ShieldAction, Shared, Policy/Sources/ReelsBanPolicy]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app.shieldaction
+        INFOPLIST_FILE: ShieldAction/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ShieldAction/ReelsBan.entitlements
+        APPLICATION_EXTENSION_API_ONLY: YES
+schemes:
+  ReelsBan:
+    build:
+      targets:
+        ReelsBan: all

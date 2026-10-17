@@ -1,0 +1,2 @@
+// Copy Signing.local.xcconfig.example to Signing.local.xcconfig for your team.
+#include? "Signing.local.xcconfig"
