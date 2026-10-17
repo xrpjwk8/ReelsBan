@@ -1,9 +1,13 @@
 import SwiftUI
 
 @MainActor final class JobRouter: ObservableObject {
-    @Published var showJob = false
+    enum Destination: String, Identifiable {
+        case settings, limit
+        var id: String { rawValue }
+    }
+    @Published var destination: Destination?
     func consumeRequest() {
-        if SharedState.consumeJobRequest() { showJob = true }
+        if SharedState.consumeJobRequest() { destination = .limit }
     }
 }
 

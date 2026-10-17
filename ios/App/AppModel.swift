@@ -13,6 +13,7 @@ import Combine
     @Published var blocked = false
     @Published var busy = false
     @Published var notice: String?
+    @Published var saveConfirmation: String?
     @Published var showingAppPicker = false
     @Published var monitoringActive = false
     @Published var savedAppCount = 0
@@ -83,7 +84,13 @@ import Combine
         nameNotice = displayName.isEmpty ? "이름을 지웠어요. 기본 문구를 사용해요." : "저장했어요. 다음 한도 안내 화면에 이름이 표시돼요."
     }
     func save() {
+        saveConfirmation = nil
         guard SharedState.defaults != nil else { notice = "앱 그룹 설정을 확인해주세요. 모든 타깃에 같은 App Group과 개발 팀이 필요해요."; return }
+        guard SharedState.saveDisplayName(displayName) else {
+            notice = "이름을 저장하지 못했어요. 다시 시도해주세요."
+            return
+        }
+        displayName = SharedState.displayName
         let old = SharedState.configuration
         if !enabled {
             var disabled = old
@@ -95,6 +102,7 @@ import Combine
             SharedState.store.clearAllSettings()
             refresh()
             notice = "사용 시간 제한을 껐어요."
+            saveConfirmation = "설정을 저장하고 사용 시간 제한을 껐어요."
             return
         }
         guard authorized else { notice = "먼저 Screen Time 접근을 허용해주세요."; return }
@@ -106,6 +114,7 @@ import Combine
         let center = DeviceActivityCenter()
         if old.enabled && old.appLimits == limits && old.selection == selection && center.activities.contains(old.activity) {
             notice = "오늘의 약속을 저장했어요."
+            saveConfirmation = "앱별 하루 한도 설정을 저장했어요."
             refresh()
             return
         }
@@ -122,6 +131,7 @@ import Combine
             SharedState.removeBlocks(for: old)
             SharedState.reconcileShield()
             notice = "오늘의 약속을 저장했어요. 오늘 이미 사용한 시간도 포함해요."
+            saveConfirmation = "앱별 하루 한도 설정을 저장했어요. 오늘 이미 사용한 시간도 포함해요."
         } catch {
             SharedState.configuration = old
             SharedState.removeBlocks(for: config)

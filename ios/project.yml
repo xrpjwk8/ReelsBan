@@ -28,6 +28,8 @@ targets:
         INFOPLIST_FILE: App/Info.plist
         CODE_SIGN_ENTITLEMENTS: App/ReelsBan.entitlements
     dependencies:
+      - target: UsageReport
+        embed: true
       - target: ActivityMonitor
         embed: true
       - target: ShieldConfiguration
@@ -63,6 +65,16 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app.shieldaction
         INFOPLIST_FILE: ShieldAction/Info.plist
         CODE_SIGN_ENTITLEMENTS: ShieldAction/ReelsBan.entitlements
+        APPLICATION_EXTENSION_API_ONLY: YES
+  UsageReport:
+    type: app-extension
+    platform: iOS
+    sources: [UsageReport]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelsban.app.usagereport
+        INFOPLIST_FILE: UsageReport/Info.plist
+        CODE_SIGN_ENTITLEMENTS: UsageReport/ReelsBan.entitlements
         APPLICATION_EXTENSION_API_ONLY: YES
 schemes:
   ReelsBan:

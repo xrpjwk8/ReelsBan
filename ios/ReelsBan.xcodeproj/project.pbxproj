@@ -15,10 +15,12 @@
 		359C595C205B90E5EC526115 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		5976DD54C6458951817F3863 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
 		65C53DF84FA34863A9DE8100 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
+		6A7E00BF794CAD01A6AB90D8 /* UsageReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7C3A6C7F2746B6A76121F /* UsageReport.swift */; };
 		812A40C6633AEBF0F42EDA43 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */; };
 		88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93C4EAAD3ACB9E1E7953A230 /* UsageReport.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9AF6551CC9AEF82BE7CAD374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C503F9E87133AF155A922937 /* ContentView.swift */; };
 		9B7ADF4BCA2C5BE1CC88DF4D /* ReelsBanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */; };
 		D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87477148CD3B07E02D61BB46 /* AppModel.swift */; };
@@ -27,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2E5C455C002D7195892E91A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F44D2CA5FEE8D8AA22DCF7E;
+			remoteInfo = UsageReport;
+		};
 		335767FE929795C28CE445BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AE54BEF2FB3750E9FD3FAA2 /* Project object */;
@@ -57,6 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				93C4EAAD3ACB9E1E7953A230 /* UsageReport.appex in Embed Foundation Extensions */,
 				2744F6A161FC12F6D005EABD /* ActivityMonitor.appex in Embed Foundation Extensions */,
 				93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */,
 				FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */,
@@ -67,17 +77,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Signing.xcconfig; sourceTree = SOURCE_ROOT; };
 		135A592D60B0A23F91E6B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		13A5EB5198AF0CC7E72FF078 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		1F912F30FC8FAA175A484821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsBanApp.swift; sourceTree = "<group>"; };
+		4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		52566087619F2F5AAA1B8AB6 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
 		6F5813F889F253538F6A5C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7FD7C3A6C7F2746B6A76121F /* UsageReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageReport.swift; sourceTree = "<group>"; };
+		8154918EA8193F84B643BA6F /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		87477148CD3B07E02D61BB46 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		958D2624620516F7E3407EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6197F3D39330164296561FC /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
-		B7B11A8C7B3F6681A29B030F /* ReelsBan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelsBan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B11A8C7B3F6681A29B030F /* ReelsBan.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReelsBan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicy.swift; sourceTree = "<group>"; };
 		BE14C68D91AC948C4DD8ABD6 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
@@ -86,8 +99,9 @@
 		C85F0C59015CEDB4EB498FE9 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		DB3C61B231F1D05037439A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DFF7934AACE08B4414278EF7 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
-		E765FF2793B668CE00856306 /* ActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E765FF2793B668CE00856306 /* ActivityMonitor.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2F0155AC4CEDB95E080259 /* UsageReport.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = UsageReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -138,15 +152,25 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		803011F965F52247F447045C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		84E66F38DB75D02DAF050335 = {
 			isa = PBXGroup;
 			children = (
 				E306C8AB43BD615393CF02C5 /* App */,
+				803011F965F52247F447045C /* Config */,
 				12154F0F754DB1E5BC434CB3 /* Monitor */,
 				5BDCF4F523BD1E3284B5A6D0 /* ReelsBanPolicy */,
 				786FC602D578123619D97E94 /* Shared */,
 				4EACF0585E1CDFA01F3005E8 /* ShieldAction */,
 				19B38C59EA65CA5B78ECA02F /* ShieldConfiguration */,
+				DBDED55E6597864BED98422C /* UsageReport */,
 				C039426B28A8D7F5CCACE207 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -158,8 +182,19 @@
 				B7B11A8C7B3F6681A29B030F /* ReelsBan.app */,
 				F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */,
 				B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */,
+				EE2F0155AC4CEDB95E080259 /* UsageReport.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DBDED55E6597864BED98422C /* UsageReport */ = {
+			isa = PBXGroup;
+			children = (
+				958D2624620516F7E3407EE5 /* Info.plist */,
+				8154918EA8193F84B643BA6F /* ReelsBan.entitlements */,
+				7FD7C3A6C7F2746B6A76121F /* UsageReport.swift */,
+			);
+			path = UsageReport;
 			sourceTree = "<group>";
 		};
 		E306C8AB43BD615393CF02C5 /* App */ = {
@@ -221,6 +256,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E1C2F8AA4B2D584AAA6AE4A6 /* PBXTargetDependency */,
 				5D6CB3D01DBA081D32ED3123 /* PBXTargetDependency */,
 				AC32C6A27754AEC63D2A1310 /* PBXTargetDependency */,
 				03ED12801A7CB2199A1B1F81 /* PBXTargetDependency */,
@@ -231,6 +267,23 @@
 			productName = ReelsBan;
 			productReference = B7B11A8C7B3F6681A29B030F /* ReelsBan.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7F44D2CA5FEE8D8AA22DCF7E /* UsageReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE1BE50D036F7BD25DC51029 /* Build configuration list for PBXNativeTarget "UsageReport" */;
+			buildPhases = (
+				B64E093C063B26A88CCF7FBD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UsageReport;
+			packageProductDependencies = (
+			);
+			productName = UsageReport;
+			productReference = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		F1530FAFF9813EBB0705CA30 /* ShieldAction */ = {
 			isa = PBXNativeTarget;
@@ -259,15 +312,23 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					36C53E91BA450C1F8CD85F4E = {
+						DevelopmentTeam = "$(REELSBAN_DEVELOPMENT_TEAM)";
 						ProvisioningStyle = Automatic;
 					};
 					59CD4E073EDF53C7DC2416C9 = {
+						DevelopmentTeam = "$(REELSBAN_DEVELOPMENT_TEAM)";
 						ProvisioningStyle = Automatic;
 					};
 					607429A1B121B0A762FCBB67 = {
+						DevelopmentTeam = "$(REELSBAN_DEVELOPMENT_TEAM)";
+						ProvisioningStyle = Automatic;
+					};
+					7F44D2CA5FEE8D8AA22DCF7E = {
+						DevelopmentTeam = "$(REELSBAN_DEVELOPMENT_TEAM)";
 						ProvisioningStyle = Automatic;
 					};
 					F1530FAFF9813EBB0705CA30 = {
+						DevelopmentTeam = "$(REELSBAN_DEVELOPMENT_TEAM)";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,6 +351,7 @@
 				36C53E91BA450C1F8CD85F4E /* ActivityMonitor */,
 				59CD4E073EDF53C7DC2416C9 /* ShieldConfiguration */,
 				F1530FAFF9813EBB0705CA30 /* ShieldAction */,
+				7F44D2CA5FEE8D8AA22DCF7E /* UsageReport */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +389,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B64E093C063B26A88CCF7FBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A7E00BF794CAD01A6AB90D8 /* UsageReport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B84E34BF3727552522D66B74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +425,11 @@
 			target = 59CD4E073EDF53C7DC2416C9 /* ShieldConfiguration */;
 			targetProxy = 72D483BDC2CEC04636AB903C /* PBXContainerItemProxy */;
 		};
+		E1C2F8AA4B2D584AAA6AE4A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F44D2CA5FEE8D8AA22DCF7E /* UsageReport */;
+			targetProxy = 2E5C455C002D7195892E91A5 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -364,7 +439,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/ReelsBan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,7 +456,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/ReelsBan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,7 +472,6 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ShieldAction/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = ShieldAction/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,7 +489,6 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = Monitor/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = Monitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,7 +503,7 @@
 		};
 		675B4E9D2253ED2AF8FA22B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */;
+			baseConfigurationReference = 4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -468,6 +539,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -501,12 +573,28 @@
 			};
 			name = Debug;
 		};
+		732ABD16183117A560B02C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = UsageReport/ReelsBan.entitlements;
+				INFOPLIST_FILE = UsageReport/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.usagereport;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7391B5B0CB49559F88013C46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ShieldAction/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = ShieldAction/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,12 +607,28 @@
 			};
 			name = Release;
 		};
+		7675A199D6DC2CED8209EF38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = UsageReport/ReelsBan.entitlements;
+				INFOPLIST_FILE = UsageReport/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.usagereport;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		81CABAD003236EDC3CDA3CE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,7 +646,6 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ShieldConfiguration/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = ShieldConfiguration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,7 +663,6 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = Monitor/ReelsBan.entitlements;
-				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = Monitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,7 +677,7 @@
 		};
 		E9292CE168B8E9E146319A36 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB12CD34EF56AB78CD90EF12 /* Signing.xcconfig */;
+			baseConfigurationReference = 4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -611,6 +713,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "$(REELSBAN_DEVELOPMENT_TEAM)";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -672,6 +775,15 @@
 			buildConfigurations = (
 				224E545AFA8E9A81678A1B3E /* Debug */,
 				7391B5B0CB49559F88013C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AE1BE50D036F7BD25DC51029 /* Build configuration list for PBXNativeTarget "UsageReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7675A199D6DC2CED8209EF38 /* Debug */,
+				732ABD16183117A560B02C23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

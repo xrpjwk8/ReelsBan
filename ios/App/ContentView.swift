@@ -1,11 +1,13 @@
 import SwiftUI
 import FamilyControls
 import SafariServices
+import DeviceActivity
 
 struct ContentView: View {
     @StateObject private var model = AppModel()
     @StateObject private var router = JobRouter()
     @Environment(\.scenePhase) private var scenePhase
+    @State private var usageRefresh = Date()
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -43,7 +45,7 @@ struct ContentView: View {
                             .onChange(of: model.displayName) { _, value in
                                 if value.count > 20 { model.displayName = String(value.prefix(20)) }
                             }
-                        Text("최대 20자 · 비워두면 기본 문구를 사용해요.")
+                        Text("최대 20자 · 오늘의 약속 저장 시 이름도 함께 저장돼요. 비워두면 기본 문구를 사용해요.")
                             .font(.footnote).foregroundStyle(.secondary)
                         Text(SharedState.limitTitle(for: model.displayName))
                             .font(.subheadline).accessibilityLabel("한도 안내 미리보기: " + SharedState.limitTitle(for: model.displayName))
@@ -58,10 +60,25 @@ struct ContentView: View {
                         ForEach($model.limits) { $limit in
                             VStack(alignment: .leading, spacing: 8) {
                                 Label(limit.token).labelStyle(.titleAndIcon)
+                                if model.authorized {
+                                    DeviceActivityReport(.init("reelsban.today.app"), filter: DeviceActivityFilter(
+                                        segment: .daily(during: Calendar.current.dateInterval(of: .day, for: usageRefresh)!),
+                                        devices: .init([.iPhone]), applications: [limit.token]
+                                    ))
+                                    .id(limit.id + usageRefresh.description)
+                                    .frame(height: 66)
+                                } else {
+                                    Text("오늘 사용 시간: Screen Time 접근 허용 필요").font(.footnote).foregroundStyle(.secondary)
+                                }
                                 Stepper(value: $limit.minutes, in: 1...480) {
                                     Text("하루 **\(limit.minutes)분**")
                                 }
                             }
+                        }
+                        if model.authorized && !model.limits.isEmpty {
+                            Button("오늘 사용 시간 새로고침") { usageRefresh = Date() }
+                            Text("Screen Time 집계는 반영이 늦을 수 있어요. iPhone 사용 기록 기준이며, 기기 간 공유 설정에 따라 다른 iPhone 기록도 포함될 수 있어요.")
+                                .font(.footnote).foregroundStyle(.secondary)
                         }
                         Text("여러 앱을 선택하고 각각 한도를 정해주세요. 기본값은 앱마다 30분이며, 사용 시간은 합산하지 않아요. 매일 자정을 기준으로 다시 시작해요.")
                             .font(.footnote).foregroundStyle(.secondary)
@@ -71,19 +88,32 @@ struct ContentView: View {
                         Text("한도에 도달하면").font(.headline)
                         Text("각자의 한도를 채운 앱만 차단돼요. ‘설정한 사이트 열기’를 누르면 저장한 주소가 열려요. 기본값은 맥도날드 채용 공고예요.")
                             .font(.subheadline).foregroundStyle(.secondary)
-                        Button("공고 보기 · 이동 사이트 설정") { router.showJob = true }.font(.headline)
+                        Button("공고 보기 · 이동 사이트 설정") { router.destination = .settings }.font(.headline)
                     }
                 }.padding(24)
             }.background(Color(.systemBackground))
         }
         .tint(.primary)
+        .alert("저장 완료", isPresented: Binding(
+            get: { model.saveConfirmation != nil },
+            set: { if !$0 { model.saveConfirmation = nil } }
+        )) {
+            Button("확인", role: .cancel) { model.saveConfirmation = nil }
+        } message: {
+            Text(model.saveConfirmation ?? "")
+        }
         .sheet(isPresented: $model.showingAppPicker) {
             AppSelectionView(selection: model.selection) { model.choose($0) }
         }
-        .sheet(isPresented: $router.showJob) { JobPage() }
+        .sheet(item: $router.destination) { destination in
+            JobPage(allowsSettings: destination == .settings)
+        }
         .onAppear { router.consumeRequest() }
+        .onReceive(NotificationCenter.default.publisher(for: .NSCalendarDayChanged)) { _ in
+            usageRefresh = Date()
+        }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .active { model.refresh(); router.consumeRequest() }
+            if phase == .active { model.refresh(); router.consumeRequest(); usageRefresh = Date() }
         }
     }
 }
@@ -126,6 +156,7 @@ private struct PrimaryStyle: ButtonStyle {
     }
 }
 private struct JobPage: View {
+    let allowsSettings: Bool
     @Environment(\.dismiss) private var dismiss
     @State private var address = SharedState.jobURL.absoluteString
     @State private var displayedURL = SharedState.jobURL
@@ -133,6 +164,7 @@ private struct JobPage: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                if allowsSettings {
                 DisclosureGroup("이동할 사이트 설정") {
                     VStack(alignment: .leading, spacing: 12) {
                         TextField("https://example.com", text: $address)
@@ -149,11 +181,12 @@ private struct JobPage: View {
                         if let message { Text(message).font(.footnote) }
                     }.padding(.top, 12)
                 }.padding()
+                }
                 SafariPage(url: displayedURL).id(displayedURL)
             }
-            .navigationTitle("공고 · 이동 사이트")
+//            .navigationTitle(allowsSettings ? "공고 · 이동 사이트" : "설정한 사이트")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } } }
+//            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("닫기") { dismiss() } } }
         }
     }
     private func save(_ input: String) {

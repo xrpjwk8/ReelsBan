@@ -46,7 +46,19 @@ typealias BlockRecord = DailyBlockRecord
 
 enum SharedState {
     static let store = ManagedSettingsStore(named: .init("reelsban"))
-    static var displayName: String { defaults?.string(forKey: "displayName") ?? "" }
+    private static var groupContainer: URL? {
+        guard let group = Bundle.main.object(forInfoDictionaryKey: "ReelsBanAppGroup") as? String else { return nil }
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group)
+    }
+    static var displayName: String {
+        // Read the atomic shared file on each shield configuration, not a cached preferences value.
+        if let file = groupContainer?.appendingPathComponent("display-name.json"),
+           let data = try? Data(contentsOf: file),
+           let name = try? JSONDecoder().decode(String.self, from: data) {
+            return normalizedName(name)
+        }
+        return normalizedName(defaults?.string(forKey: "displayName") ?? "")
+    }
     static func normalizedName(_ text: String) -> String {
         String(text.split(whereSeparator: { $0.isWhitespace }).joined(separator: " ").prefix(20))
     }
@@ -55,9 +67,13 @@ enum SharedState {
         return name.isEmpty ? "오늘의 약속을 지켰어요" : "\(name)님, 오늘의 한도에 도달했어요"
     }
     static func saveDisplayName(_ text: String) -> Bool {
-        guard let defaults else { return false }
-        defaults.set(normalizedName(text), forKey: "displayName")
-        return true
+        guard let file = groupContainer?.appendingPathComponent("display-name.json") else { return false }
+        let name = normalizedName(text)
+        do {
+            try JSONEncoder().encode(name).write(to: file, options: .atomic)
+            defaults?.set(name, forKey: "displayName")
+            return true
+        } catch { return false }
     }
     static var jobURL: URL {
         DailyPolicy.destinationURL(defaults?.string(forKey: "destinationURL") ?? "") ?? DailyPolicy.defaultDestination
