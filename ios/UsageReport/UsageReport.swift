@@ -1,5 +1,6 @@
 import SwiftUI
 import DeviceActivity
+import ExtensionKit
 
 @main
 struct UsageReportExtension: DeviceActivityReportExtension {

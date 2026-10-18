@@ -20,9 +20,10 @@
 		88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5D0E97751C3406F63A420F6 /* ShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		93C4EAAD3ACB9E1E7953A230 /* UsageReport.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9AF6551CC9AEF82BE7CAD374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C503F9E87133AF155A922937 /* ContentView.swift */; };
 		9B7ADF4BCA2C5BE1CC88DF4D /* ReelsBanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */; };
+		A7C790F6F9599B0113FAABA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E856FBE689879DE6ECCFF8A /* Assets.xcassets */; };
+		B38C06555167F883D389A5D8 /* UsageReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87477148CD3B07E02D61BB46 /* AppModel.swift */; };
 		DBFFE34E98E4725A69BFCEAB /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -60,13 +61,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5CC67CA549B9291D08AF73AD /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				B38C06555167F883D389A5D8 /* UsageReport.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B68D31B0381A524DCA2E6215 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				93C4EAAD3ACB9E1E7953A230 /* UsageReport.appex in Embed Foundation Extensions */,
 				2744F6A161FC12F6D005EABD /* ActivityMonitor.appex in Embed Foundation Extensions */,
 				93333CFC10F5E13BD4FA08B8 /* ShieldConfiguration.appex in Embed Foundation Extensions */,
 				FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */,
@@ -81,6 +92,7 @@
 		13A5EB5198AF0CC7E72FF078 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		1F912F30FC8FAA175A484821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsBanApp.swift; sourceTree = "<group>"; };
+		4E856FBE689879DE6ECCFF8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		52566087619F2F5AAA1B8AB6 /* ActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonitor.swift; sourceTree = "<group>"; };
 		6F5813F889F253538F6A5C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +112,7 @@
 		DB3C61B231F1D05037439A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DFF7934AACE08B4414278EF7 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		E765FF2793B668CE00856306 /* ActivityMonitor.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE2F0155AC4CEDB95E080259 /* UsageReport.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = UsageReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2F0155AC4CEDB95E080259 /* UsageReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = UsageReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				87477148CD3B07E02D61BB46 /* AppModel.swift */,
+				4E856FBE689879DE6ECCFF8A /* Assets.xcassets */,
 				C503F9E87133AF155A922937 /* ContentView.swift */,
 				DB3C61B231F1D05037439A03 /* Info.plist */,
 				DFF7934AACE08B4414278EF7 /* ReelsBan.entitlements */,
@@ -251,7 +264,9 @@
 			buildConfigurationList = 135957D207A9120CE1B9CC6D /* Build configuration list for PBXNativeTarget "ReelsBan" */;
 			buildPhases = (
 				466A0D3E4B36F8B972998D92 /* Sources */,
+				17E4528A93B77141FB7DF33D /* Resources */,
 				B68D31B0381A524DCA2E6215 /* Embed Foundation Extensions */,
+				5CC67CA549B9291D08AF73AD /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
@@ -283,7 +298,7 @@
 			);
 			productName = UsageReport;
 			productReference = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */;
-			productType = "com.apple.product-type.app-extension";
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 		F1530FAFF9813EBB0705CA30 /* ShieldAction */ = {
 			isa = PBXNativeTarget;
@@ -355,6 +370,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17E4528A93B77141FB7DF33D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7C790F6F9599B0113FAABA4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		466A0D3E4B36F8B972998D92 /* Sources */ = {
@@ -582,7 +608,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.usagereport;
 				SDKROOT = iphoneos;
@@ -616,7 +641,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reelsban.app.usagereport;
 				SDKROOT = iphoneos;
