@@ -47,9 +47,16 @@ struct ContentView: View {
                             }
                         Text("최대 20자 · 오늘의 약속 저장 시 이름도 함께 저장돼요. 비워두면 기본 문구를 사용해요.")
                             .font(.footnote).foregroundStyle(.secondary)
-                        Text(SharedState.limitTitle(for: model.displayName))
-                            .font(.subheadline).accessibilityLabel("한도 안내 미리보기: " + SharedState.limitTitle(for: model.displayName))
-                        Button("이름 저장") { model.saveName() }
+                        Button { model.saveName() } label: {
+                            Text("이름 저장")
+                                .font(.subheadline.weight(.semibold))
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.primary.opacity(0.35), lineWidth: 1)
+                                }
+                        }.buttonStyle(.plain)
                         if let notice = model.nameNotice { Text(notice).font(.footnote) }
                     }.padding(20).background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20))
                     VStack(alignment: .leading, spacing: 20) {
@@ -58,6 +65,7 @@ struct ContentView: View {
                             HStack { Text("제한할 앱 선택"); Spacer(); Text("\(model.selection.applicationTokens.count)개"); Image(systemName: "chevron.right") }
                         }.disabled(!model.authorized)
                         ForEach($model.limits) { $limit in
+                            Divider()
                             VStack(alignment: .leading, spacing: 8) {
                                 Label(limit.token).labelStyle(.titleAndIcon)
                                 if model.authorized {
@@ -76,7 +84,18 @@ struct ContentView: View {
                             }
                         }
                         if model.authorized && !model.limits.isEmpty {
-                            Button("오늘 사용 시간 새로고침") { usageRefresh = Date() }
+                            Divider()
+//                            Button("오늘 사용 시간 새로고침") { usageRefresh = Date() }
+                            Button { usageRefresh = Date() } label: {
+                                Text("오늘 사용 시간 새로고침")
+                                    .font(.subheadline.weight(.semibold))
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 10)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.primary.opacity(0.35), lineWidth: 1)
+                                    }
+                            }.buttonStyle(.plain)
                             Text("Screen Time 집계는 반영이 늦을 수 있어요. iPhone 사용 기록 기준이며, 기기 간 공유 설정에 따라 다른 iPhone 기록도 포함될 수 있어요.")
                                 .font(.footnote).foregroundStyle(.secondary)
                         }
