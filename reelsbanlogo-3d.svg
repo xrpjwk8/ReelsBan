@@ -1,0 +1,38 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ReelsBan — softly raised logo</title>
+  <defs>
+    <linearGradient id="phone" x1="321" y1="330" x2="702" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e6e8eb"/>
+      <stop offset=".16" stop-color="#fafbfc"/>
+      <stop offset=".43" stop-color="#ffffff"/>
+      <stop offset=".78" stop-color="#f3f4f6"/>
+      <stop offset="1" stop-color="#c9cdd3"/>
+    </linearGradient>
+    <linearGradient id="slash" x1="475" y1="476" x2="552" y2="551" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d7dbe0"/>
+      <stop offset=".15" stop-color="#f5f6f8"/>
+      <stop offset=".38" stop-color="#ffffff"/>
+      <stop offset=".62" stop-color="#fafbfc"/>
+      <stop offset=".86" stop-color="#e1e4e8"/>
+      <stop offset="1" stop-color="#b8bec6"/>
+    </linearGradient>
+    <filter id="bevel" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="soft"/>
+      <feOffset in="soft" dx="-3" dy="-5" result="up"/>
+      <feComposite in="SourceAlpha" in2="up" operator="out" result="lowerEdge"/>
+      <feFlood flood-color="#616b79" flood-opacity=".42" result="shade"/>
+      <feComposite in="shade" in2="lowerEdge" operator="in" result="innerShadow"/>
+      <feComposite in="innerShadow" in2="SourceGraphic" operator="over" result="shaded"/>
+      <feOffset in="soft" dx="3" dy="5" result="down"/>
+      <feComposite in="SourceAlpha" in2="down" operator="out" result="upperEdge"/>
+      <feFlood flood-color="white" flood-opacity=".9" result="light"/>
+      <feComposite in="light" in2="upperEdge" operator="in" result="highlight"/>
+      <feComposite in="highlight" in2="shaded" operator="over"/>
+    </filter>
+    <path id="bar" d="M124.177 836.706L821.776 120.035C839.111 102.226 867.601 101.842 885.41 119.177L898.308 131.732C916.117 149.067 916.501 177.557 899.166 195.366L201.567 912.037C184.232 929.846 155.742 930.23 137.933 912.895L125.035 900.34C107.226 883.005 106.842 854.515 124.177 836.706Z"/>
+  </defs>
+  <rect width="1024" height="1024" fill="black"/>
+  <rect x="321" y="154" width="381" height="715" rx="71" fill="url(#phone)" filter="url(#bevel)"/>
+  <use href="#bar" fill="black" stroke="black" stroke-width="30"/>
+  <use href="#bar" fill="url(#slash)" filter="url(#bevel)"/>
+</svg>

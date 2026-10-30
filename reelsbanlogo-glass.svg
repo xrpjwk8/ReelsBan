@@ -1,0 +1,49 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>ReelsBan — smoked glass</title>
+<defs>
+  <linearGradient id="glass" x1="330" y1="154" x2="690" y2="869" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#b9c6d2" stop-opacity=".65"/>
+    <stop offset=".22" stop-color="#758695" stop-opacity=".36"/>
+    <stop offset=".48" stop-color="#28343f" stop-opacity=".48"/>
+    <stop offset=".75" stop-color="#798c9d" stop-opacity=".32"/>
+    <stop offset="1" stop-color="#c6d5e2" stop-opacity=".65"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="321" y1="154" x2="702" y2="869" gradientUnits="userSpaceOnUse">
+    <stop stop-color="white"/>
+    <stop offset=".28" stop-color="#d8e6f3" stop-opacity=".8"/>
+    <stop offset=".48" stop-color="#9badbf" stop-opacity=".18"/>
+    <stop offset=".75" stop-color="#d0dfec" stop-opacity=".4"/>
+    <stop offset="1" stop-color="white" stop-opacity=".95"/>
+  </linearGradient>
+  <linearGradient id="barGlass" x1="475" y1="476" x2="552" y2="551" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#e9f3fc"/>
+    <stop offset=".045" stop-color="#ffffff"/>
+    <stop offset=".13" stop-color="#9fadb9"/>
+    <stop offset=".32" stop-color="#495866"/>
+    <stop offset=".57" stop-color="#26333e"/>
+    <stop offset=".78" stop-color="#566674"/>
+    <stop offset=".94" stop-color="#bdcddc"/>
+    <stop offset="1" stop-color="#f5faff"/>
+  </linearGradient>
+  <linearGradient id="reflection" x1="350" y1="155" x2="560" y2="580" gradientUnits="userSpaceOnUse">
+    <stop stop-color="white" stop-opacity=".32"/>
+    <stop offset="1" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <clipPath id="phoneClip"><rect x="321" y="154" width="381" height="715" rx="71"/></clipPath>
+  <path id="bar" d="M124.177 836.706L821.776 120.035C839.111 102.226 867.601 101.842 885.41 119.177L898.308 131.732C916.117 149.067 916.501 177.557 899.166 195.366L201.567 912.037C184.232 929.846 155.742 930.23 137.933 912.895L125.035 900.34C107.226 883.005 106.842 854.515 124.177 836.706Z"/>
+  <clipPath id="barClip"><use href="#bar"/></clipPath>
+</defs>
+<rect width="1024" height="1024" fill="black"/>
+<rect x="321" y="154" width="381" height="715" rx="71" fill="url(#glass)" stroke="url(#edge)" stroke-width="3"/>
+<rect x="327" y="160" width="369" height="703" rx="65" stroke="white" stroke-opacity=".13" stroke-width="1.5"/>
+<g clip-path="url(#phoneClip)">
+  <path d="M300 145H720V340C575 358 445 455 300 603Z" fill="url(#reflection)"/>
+  <path d="M333 300V225Q333 166 392 166H577" stroke="white" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M690 722V798Q690 857 631 857H552" stroke="#dceeff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+</g>
+<use href="#bar" fill="black" stroke="black" stroke-width="30"/>
+<use href="#bar" fill="url(#barGlass)" stroke="url(#edge)" stroke-width="2"/>
+<g clip-path="url(#barClip)">
+  <path d="M90 760L775 56L940 150L150 962Z" fill="url(#reflection)" opacity=".45"/>
+</g>
+</svg>

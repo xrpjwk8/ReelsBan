@@ -1,0 +1,25 @@
+{
+  "generator": "Built-in image_gen",
+  "concepts": [
+    {
+      "name": "01-play-stop",
+      "prompt": "Use case: logo-brand. Create one polished square app icon concept for ReelsBan, a Korean digital wellbeing app that limits short-video scrolling and helps people return to real life. Current brand uses bold minimal black and white. Full-bleed solid near-black square background, central warm-white bold geometric symbol, generous 22% safe margins. Flat vector-like precision, distinctive custom graphic identity, strong silhouette legible at 32 pixels. No text, no letters, no captions, no watermarks, no mockup, no shadows, no gradients, no extra borders. This is a single icon, not a presentation sheet. A custom play triangle interrupted by a decisive diagonal negative-space cut: the two remaining white pieces suggest a play button decisively stopped. Visually balanced, original geometry, few elements. Communicate stopping compulsive short-video playback."
+    },
+    {
+      "name": "02-step-out",
+      "prompt": "Use case: logo-brand. Create one polished square app icon concept for ReelsBan, a Korean digital wellbeing app that limits short-video scrolling and helps people return to real life. Current brand uses bold minimal black and white. Full-bleed solid near-black square background, central warm-white bold geometric symbol, generous 22% safe margins. Flat vector-like precision, distinctive custom graphic identity, strong silhouette legible at 32 pixels. No text, no letters, no captions, no watermarks, no mockup, no shadows, no gradients, no extra borders. This is a single icon, not a presentation sheet. A bold open doorway built from a partial rounded smartphone outline, with a single strong rightward arrow exiting through the opening. Merge arrow and open screen into one coherent compact logo. Communicate leaving the screen and returning to real life. No tiny screen controls."
+    },
+    {
+      "name": "03-break-loop",
+      "prompt": "Use case: logo-brand. Create one polished square app icon concept for ReelsBan, a Korean digital wellbeing app that limits short-video scrolling and helps people return to real life. Current brand uses bold minimal black and white. Full-bleed solid near-black square background, central warm-white bold geometric symbol, generous 22% safe margins. Flat vector-like precision, distinctive custom graphic identity, strong silhouette legible at 32 pixels. No text, no letters, no captions, no watermarks, no mockup, no shadows, no gradients, no extra borders. This is a single icon, not a presentation sheet. A thick almost-closed circular loop, broken at its upper right, with the departing end transforming into a short outward arrow. Clean bold single-flow geometry that suggests escaping an endless scrolling loop. Keep it simple and distinctive, not a recycling symbol."
+    },
+    {
+      "name": "04-own-time",
+      "prompt": "Use case: logo-brand. Create one polished square app icon concept for ReelsBan, a Korean digital wellbeing app that limits short-video scrolling and helps people return to real life. Current brand uses bold minimal black and white. Full-bleed solid near-black square background, central warm-white bold geometric symbol, generous 22% safe margins. Flat vector-like precision, distinctive custom graphic identity, strong silhouette legible at 32 pixels. No text, no letters, no captions, no watermarks, no mockup, no shadows, no gradients, no extra borders. This is a single icon, not a presentation sheet. A bold simplified circular clock boundary with an integrated checkmark replacing clock hands. Merge the checkmark into the lower-right perimeter for a distinctive unified symbol. No hour ticks or numerals. Communicate reclaiming control over daily screen time and keeping a promise to yourself."
+    },
+    {
+      "name": "05-pause-life",
+      "prompt": "Use case: logo-brand. Create one polished square app icon concept for ReelsBan, a Korean digital wellbeing app that limits short-video scrolling and helps people return to real life. Current brand uses bold minimal black and white. Full-bleed solid near-black square background, central warm-white bold geometric symbol, generous 22% safe margins. Flat vector-like precision, distinctive custom graphic identity, strong silhouette legible at 32 pixels. No text, no letters, no captions, no watermarks, no mockup, no shadows, no gradients, no extra borders. This is a single icon, not a presentation sheet. Two bold pause bars form a clever abstract open gateway: the left bar upright and the right bar subtly angled outward, with a small clean rising sun semicircle between their upper ends. Minimal geometric composition, only three white shapes. Communicate taking a pause and stepping back into daylight and real life."
+    }
+  ]
+}
