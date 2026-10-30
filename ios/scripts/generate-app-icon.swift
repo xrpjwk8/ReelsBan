@@ -1,14 +1,15 @@
-// Run from the repository root: swift ios/scripts/generate-app-icon.swift
+// Run from the repository root: swift ios/scripts/generate-app-icon.swift [logo.png]
+// To restore the original: swift ios/scripts/generate-app-icon.swift reelsbanlogo.png
 import CoreGraphics
 import ImageIO
 import UniformTypeIdentifiers
 import Foundation
 
-let sourceURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-    .appendingPathComponent("reelsbanlogo.png")
+let sourcePath = CommandLine.arguments.dropFirst().first ?? "logo02.png"
+let sourceURL = URL(fileURLWithPath: sourcePath)
 guard let source = CGImageSourceCreateWithURL(sourceURL as CFURL, nil),
       let logo = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
-    fatalError("Cannot read reelsbanlogo.png")
+    fatalError("Cannot read \(sourcePath)")
 }
 precondition(logo.width == 1024 && logo.height == 1024, "Logo must be 1024×1024")
 let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
