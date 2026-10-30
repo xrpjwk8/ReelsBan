@@ -64,7 +64,7 @@ enum SharedState {
     }
     static func limitTitle(for name: String) -> String {
         let name = normalizedName(name)
-        return name.isEmpty ? "오늘의 약속을 지켰어요" : "\(name)님, 오늘의 한도에 도달했어요"
+        return name.isEmpty ? L("오늘의 약속을 지켰어요", "You've kept today's promise") : L("\(name)님, 오늘의 한도에 도달했어요", "\(name), you've reached today's limit")
     }
     static func saveDisplayName(_ text: String) -> Bool {
         guard let file = groupContainer?.appendingPathComponent("display-name.json") else { return false }

@@ -40,7 +40,7 @@ import Combine
         savedAppCount = config.appLimits.count
         if authorized && openPickerAfterAuthorization && !busy {
             openPickerAfterAuthorization = false
-            notice = "Screen Time 접근이 허용됐어요. 제한할 앱을 선택해주세요."
+            notice = L("Screen Time 접근이 허용됐어요. 제한할 앱을 선택해주세요.", "Screen Time access granted. Choose the apps you want to limit.")
             showingAppPicker = true
         }
     }
@@ -55,15 +55,15 @@ import Combine
         } catch {
             openPickerAfterAuthorization = false
             if let familyError = error as? FamilyControlsError, familyError == .authenticationMethodUnavailable {
-                notice = "아이폰 잠금 암호를 먼저 설정해주세요.\n설정 → Face ID 및 암호(또는 Touch ID 및 암호) → 암호 켜기\n암호 설정 후 ‘Screen Time 접근 허용’을 다시 눌러주세요. 잠금 암호 없이 앱 사용 시간 제한은 이용할 수 없어요."
+                notice = L("아이폰 잠금 암호를 먼저 설정해주세요.\n설정 → Face ID 및 암호(또는 Touch ID 및 암호) → 암호 켜기\n암호 설정 후 ‘Screen Time 접근 허용’을 다시 눌러주세요. 잠금 암호 없이 앱 사용 시간 제한은 이용할 수 없어요.", "Set an iPhone passcode first.\nSettings → Face ID & Passcode (or Touch ID & Passcode) → Turn Passcode On\nThen tap ‘Allow Screen Time access’ again. App time limits require a device passcode.")
             } else {
-                notice = "권한 승인이 완료되지 않았어요. 다시 시도해주세요. \(error.localizedDescription)"
+                notice = L("권한 승인이 완료되지 않았어요. 다시 시도해주세요. \(error.localizedDescription)", "Authorization wasn't completed. Please try again. \(error.localizedDescription)")
             }
         }
         busy = false
         refresh()
         if !authorized && notice == nil {
-            notice = "아직 접근 허용이 확인되지 않았어요. 상태 확인을 누르거나 다시 허용해주세요."
+            notice = L("아직 접근 허용이 확인되지 않았어요. 상태 확인을 누르거나 다시 허용해주세요.", "Access hasn't been confirmed yet. Check the status or try allowing access again.")
         }
     }
     func choose(_ newSelection: FamilyActivitySelection) {
@@ -73,21 +73,21 @@ import Combine
         }.sorted { $0.id < $1.id }
         selection = newSelection
         enabled = !limits.isEmpty
-        notice = "앱을 선택했어요. 한도를 정하고 ‘오늘의 약속 저장’을 눌러 적용해주세요."
+        notice = L("앱을 선택했어요. 한도를 정하고 ‘오늘의 약속 저장’을 눌러 적용해주세요.", "Apps selected. Set your limits and tap ‘Save daily limits’ to apply them.")
     }
     func saveName() {
         guard SharedState.saveDisplayName(displayName) else {
-            nameNotice = "이름을 저장하지 못했어요. 앱 그룹 설정을 확인해주세요."
+            nameNotice = L("이름을 저장하지 못했어요. 앱 그룹 설정을 확인해주세요.", "Couldn't save your name. Check the App Group configuration.")
             return
         }
         displayName = SharedState.displayName
-        nameNotice = displayName.isEmpty ? "이름을 지웠어요. 기본 문구를 사용해요." : "저장했어요. 다음 한도 안내 화면에 이름이 표시돼요."
+        nameNotice = displayName.isEmpty ? L("이름을 지웠어요. 기본 문구를 사용해요.", "Name cleared. The default message will be used.") : L("저장했어요. 다음 한도 안내 화면에 이름이 표시돼요.", "Saved. Your name will appear on the next limit screen.")
     }
     func save() {
         saveConfirmation = nil
-        guard SharedState.defaults != nil else { notice = "앱 그룹 설정을 확인해주세요. 모든 타깃에 같은 App Group과 개발 팀이 필요해요."; return }
+        guard SharedState.defaults != nil else { notice = L("앱 그룹 설정을 확인해주세요. 모든 타깃에 같은 App Group과 개발 팀이 필요해요.", "Check the App Group configuration. All targets need the same App Group and development team."); return }
         guard SharedState.saveDisplayName(displayName) else {
-            notice = "이름을 저장하지 못했어요. 다시 시도해주세요."
+            notice = L("이름을 저장하지 못했어요. 다시 시도해주세요.", "Couldn't save your name. Please try again.")
             return
         }
         displayName = SharedState.displayName
@@ -101,20 +101,20 @@ import Combine
             DeviceActivityCenter().stopMonitoring([old.activity])
             SharedState.store.clearAllSettings()
             refresh()
-            notice = "사용 시간 제한을 껐어요."
-            saveConfirmation = "설정을 저장하고 사용 시간 제한을 껐어요."
+            notice = L("사용 시간 제한을 껐어요.", "Time limits are off.")
+            saveConfirmation = L("설정을 저장하고 사용 시간 제한을 껐어요.", "Settings saved and time limits turned off.")
             return
         }
-        guard authorized else { notice = "먼저 Screen Time 접근을 허용해주세요."; return }
+        guard authorized else { notice = L("먼저 Screen Time 접근을 허용해주세요.", "Allow Screen Time access first."); return }
         var config = LimitConfiguration()
         config.selection = selection
         config.limits = limits
         config.enabled = true
-        guard config.isValid else { notice = "제한할 앱을 하나 이상 선택해주세요. 카테고리와 웹사이트는 선택하지 마세요."; return }
+        guard config.isValid else { notice = L("제한할 앱을 하나 이상 선택해주세요. 카테고리와 웹사이트는 선택하지 마세요.", "Select at least one app. Don't select categories or websites."); return }
         let center = DeviceActivityCenter()
         if old.enabled && old.appLimits == limits && old.selection == selection && center.activities.contains(old.activity) {
-            notice = "오늘의 약속을 저장했어요."
-            saveConfirmation = "앱별 하루 한도 설정을 저장했어요."
+            notice = L("오늘의 약속을 저장했어요.", "Daily limits saved.")
+            saveConfirmation = L("앱별 하루 한도 설정을 저장했어요.", "Daily limits for each app have been saved.")
             refresh()
             return
         }
@@ -130,14 +130,14 @@ import Combine
             center.stopMonitoring([old.activity])
             SharedState.removeBlocks(for: old)
             SharedState.reconcileShield()
-            notice = "오늘의 약속을 저장했어요. 오늘 이미 사용한 시간도 포함해요."
-            saveConfirmation = "앱별 하루 한도 설정을 저장했어요. 오늘 이미 사용한 시간도 포함해요."
+            notice = L("오늘의 약속을 저장했어요. 오늘 이미 사용한 시간도 포함해요.", "Daily limits saved. Usage earlier today is included.")
+            saveConfirmation = L("앱별 하루 한도 설정을 저장했어요. 오늘 이미 사용한 시간도 포함해요.", "Daily limits for each app have been saved. Usage earlier today is included.")
         } catch {
             SharedState.configuration = old
             SharedState.removeBlocks(for: config)
             center.stopMonitoring([config.activity])
             SharedState.reconcileShield()
-            notice = "설정을 적용하지 못했어요. 이전 설정을 유지합니다. \(error.localizedDescription)"
+            notice = L("설정을 적용하지 못했어요. 이전 설정을 유지합니다. \(error.localizedDescription)", "Couldn't apply settings. Your previous settings are kept. \(error.localizedDescription)")
         }
         refresh()
     }

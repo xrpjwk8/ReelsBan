@@ -16,6 +16,7 @@
 		5976DD54C6458951817F3863 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
 		65C53DF84FA34863A9DE8100 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB2E09D6DB3354514C27B /* DailyPolicy.swift */; };
 		6A7E00BF794CAD01A6AB90D8 /* UsageReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7C3A6C7F2746B6A76121F /* UsageReport.swift */; };
+		769241E32AC1378AF165A002 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90B6A9DA972546827512B /* AppLanguage.swift */; };
 		812A40C6633AEBF0F42EDA43 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE347CFF6CF5B03B3BAE1023 /* ShieldActionExtension.swift */; };
 		88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
 		8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
@@ -24,8 +25,11 @@
 		9B7ADF4BCA2C5BE1CC88DF4D /* ReelsBanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */; };
 		A7C790F6F9599B0113FAABA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E856FBE689879DE6ECCFF8A /* Assets.xcassets */; };
 		B38C06555167F883D389A5D8 /* UsageReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = EE2F0155AC4CEDB95E080259 /* UsageReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5C0D6468A13A505B0B45093 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90B6A9DA972546827512B /* AppLanguage.swift */; };
 		D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87477148CD3B07E02D61BB46 /* AppModel.swift */; };
 		DBFFE34E98E4725A69BFCEAB /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CDE440CF19639562978BBF /* SharedState.swift */; };
+		E7426061C2A8905528CBA2EB /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90B6A9DA972546827512B /* AppLanguage.swift */; };
+		F4AE35F4658DD357B7376952 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90B6A9DA972546827512B /* AppLanguage.swift */; };
 		FBC2F8F4AB79E960AE572D6B /* ShieldAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1C15C8022CA53B31B92DA86 /* ShieldAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,7 @@
 		135A592D60B0A23F91E6B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		13A5EB5198AF0CC7E72FF078 /* ReelsBan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelsBan.entitlements; sourceTree = "<group>"; };
 		1F912F30FC8FAA175A484821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		27A90B6A9DA972546827512B /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		460459CA54BEEFB69A910B04 /* ReelsBanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsBanApp.swift; sourceTree = "<group>"; };
 		4E856FBE689879DE6ECCFF8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EC92E6A47FB08849A4E5E2C /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 		786FC602D578123619D97E94 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				27A90B6A9DA972546827512B /* AppLanguage.swift */,
 				C0CDE440CF19639562978BBF /* SharedState.swift */,
 			);
 			path = Shared;
@@ -387,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769241E32AC1378AF165A002 /* AppLanguage.swift in Sources */,
 				D07B5399D9CAEFACFD25C37D /* AppModel.swift in Sources */,
 				9AF6551CC9AEF82BE7CAD374 /* ContentView.swift in Sources */,
 				0F4E120E6298B0E4F288923F /* DailyPolicy.swift in Sources */,
@@ -400,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0190877F389C4E8CB2102A1B /* ActivityMonitor.swift in Sources */,
+				C5C0D6468A13A505B0B45093 /* AppLanguage.swift in Sources */,
 				65C53DF84FA34863A9DE8100 /* DailyPolicy.swift in Sources */,
 				88D7EAB3DCBE34917AD371D7 /* SharedState.swift in Sources */,
 			);
@@ -409,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7426061C2A8905528CBA2EB /* AppLanguage.swift in Sources */,
 				5976DD54C6458951817F3863 /* DailyPolicy.swift in Sources */,
 				8D5CD9E2CA9E0385FCD25E0F /* SharedState.swift in Sources */,
 				0BC76B6B1BB88FDD9B2B9635 /* ShieldConfigurationExtension.swift in Sources */,
@@ -427,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AE35F4658DD357B7376952 /* AppLanguage.swift in Sources */,
 				02BFC6A7F035C669F20E1BCF /* DailyPolicy.swift in Sources */,
 				DBFFE34E98E4725A69BFCEAB /* SharedState.swift in Sources */,
 				812A40C6633AEBF0F42EDA43 /* ShieldActionExtension.swift in Sources */,
